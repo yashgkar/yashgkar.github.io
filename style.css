@@ -34,7 +34,7 @@ body {
 }*/
 
 .main span {
-    font-size: 35px;
+    font-size: 32px;
     color: transparent;
     animation: mainglitch 3s infinite;
 }
@@ -80,7 +80,7 @@ a:hover {
     25% {
         font-style: italic;
         color: transparent;
-        text-shadow: 0px 0px 6px #00e6bf;
+        text-shadow: 0px 0px 4px #00e6bf;
     }
     50% {
         font-style: normal;
@@ -97,7 +97,7 @@ a:hover {
     100% {
         font-style: oblique;
         color: transparent;
-        text-shadow: 0px 0px 1px #f8b12d;
+        text-shadow: 0px 0px 2px #f8b12d;
     }
 }
 
