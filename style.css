@@ -1,114 +1,105 @@
-@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
-    font-family: 'Press Start 2P', cursive;
-    background-color: black;
-    color: beige;
-    padding: 1em 2em;
-    background-image: url(./back.jpeg);
-    height: 100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  margin: 0%;
+  padding: 0%;
 }
 
-.main {
-    position: fixed;
-    top: 50%;
-    left: 65%;
-    transform: translate(-50%,-40%);
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 400px;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  transition: 0.5s;
 }
 
-
-
-.main span {
-    font-size: 32px;
-    color: transparent;
-    animation: mainglitch 3s infinite;
+img {
+  width: 300px;
 }
 
-header {
-    display: flex;
-    font-weight: 200;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 4%;
+.card .front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+  transition: 0.5s;
 }
 
-h4,
-a {
-    font-size: 25px;
-    transition: all 0.3s ease 0s;
-    text-decoration: none;
-    color: transparent;
-    text-shadow: 0px 0px 2px #ffffff;
+.card:hover .front {
+  transform: rotateX(-180deg);
 }
 
-a:hover {
-    font-style: oblique;
-    text-decoration: line-through;
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  backface-visibility: hidden;
+  transform: rotateX(180deg);
+  transition: 0.5s;
 }
 
-.nav__links li {
-    display: inline-block;
-    padding: 0px 20px;
+.card:hover .back {
+  transform: rotateX(0deg);
+  transform: rotate3d();
 }
 
-.nav__links li a {
-    font-size: 25px;
-    transition: all 0.3s ease 0s;
+.card .back .details {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-@keyframes mainglitch {
-    0% {
-        font-style: bold;
-        color: transparent;
-        text-shadow: 0px 0px 2px #ffffff;
-    }
-    25% {
-        font-style: italic;
-        color: transparent;
-        text-decoration: bold;
-        text-shadow: 0px 0px 4px #00e6bf;
-    }
-    50% {
-        font-style: normal;
-        color: transparent;
-        text-shadow: 0px 0px 3px #00daf7;
-    }
-    75% {
-        font-style: italic;
-        color: transparent;
-        text-decoration: bold;
-        text-shadow: 0px 0px 4px #00ffd5;
-    }
-    100% {
-        font-style: oblique;
-        color: transparent;
-        text-shadow: 0px 0px 2px #f8b12d;
-    }
+.card .back .details h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  color: #fff;
 }
 
-.embedpdf {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+.card .back .details h2 span {
+  color: rgb(145, 146, 145);
+  font-size: 16px;
+}
+.card .back .details h3 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
 }
 
-.contdet {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
+.social-icons a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  background: #262626;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50%;
+  transition: 0.5s;
 }
 
-.contdet h4,
-a {
-    font-size: 20px;
+.social-icons a .fa {
+  line-height: 36px;
+}
+
+.social-icons a:hover {
+  background-color: rgb(223, 0, 67);
 }
