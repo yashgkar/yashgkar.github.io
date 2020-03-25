@@ -5,8 +5,22 @@
 }
 
 body {
-  margin: 0%;
-  padding: 0%;
+	/*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
+	background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  background-image: radial-gradient( circle farthest-corner at -3.1% -4.3%,  rgba(57,255,186,1) 0%, rgba(21,38,82,1) 90% );
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .card {
@@ -101,7 +115,7 @@ img {
 }
 
 .social-icons a:hover {
-  background-color: rgb(223, 0, 67);
+  background-color: rgb(0, 181, 187);
 }
 
 /*.card .back .details .resume {
