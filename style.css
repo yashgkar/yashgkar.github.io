@@ -1,186 +1,203 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap");
-
-* {
-  font-family: "Nunito Sans", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Lustria&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+:root {
+    --main-color: rgb(198, 167, 164);
+    --mist-black: rgb(42, 41, 46);
+    --info-font: 'Varela Round', sans-serif;
 }
 
 body {
-	/*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);*/
-	background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
-  background-image: radial-gradient( circle farthest-corner at -3.1% -4.3%,  rgba(57,255,186,1) 0%, rgba(21,38,82,1) 90% );
+    background-image: radial-gradient( circle farthest-corner at -3.1% -4.3%, var(--main-color) 0%, rgb(236, 168, 162) 90%);
+    animation: gradient 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    overflow-x: hidden;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-.card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 300px;
-  height: 400px;
-  transform-style: preserve-3d;
-  perspective: 600px;
-  transition: 0.5s;
+.main-grid {
+    font-family: 'Lustria', serif;
+    margin-top: 12rem;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "sec-1 sec-2 sec-3 sec-4";
+    align-content: center;
+    justify-items: center;
 }
 
-img {
-  width: 300px;
+.section-1 {
+    display: block;
+    grid-area: sec-1;
+    transition: transform 0.5s ease-in-out;
+    transform: rotateZ(-20deg) translateY(-5rem);
 }
 
-.card .front {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  backface-visibility: hidden;
-  transform: rotateX(0deg);
-  transition: 0.5s;
+.section-1:hover {
+    transform: rotateZ(0deg);
 }
 
-.card:hover .front {
-  transform: rotateX(-180deg);
+.section-2 {
+    display: block;
+    grid-area: sec-2;
+    transition: transform 0.5s ease-in-out;
+    transform: rotateZ(20deg) translateY(-5rem);
 }
 
-.card .back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  backface-visibility: hidden;
-  transform: rotateX(180deg);
-  transition: 0.5s;
+.section-2:hover {
+    transform: rotateZ(0deg);
 }
 
-.card:hover .back {
-  transform: rotateX(0deg);
-  transform: rotate3d();
+.section-3 {
+    display: block;
+    grid-area: sec-3;
+    transition: transform 0.5s ease-in-out;
+    transform: rotateZ(5deg) translateY(7rem);
 }
 
-.card .back .details {
-  position: absolute;
-  top: 20%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
+.section-3:hover {
+    transform: rotateZ(0deg);
 }
 
-.card .back .details h2 {
-  margin: 0;
-  padding: 0;
-  font-size: 24px;
-  color: #fff;
+.section-4 {
+    display: block;
+    grid-area: sec-4;
+    transition: transform 0.5s ease-in-out;
+    transform: rotateZ(-20deg) translateY(5rem);
 }
 
-.card .back .details h2 span {
-  color: rgb(145, 146, 145);
-  font-size: 16px;
-}
-.card .back .details h3 {
-  color: rgb(255, 255, 255);
-  font-size: 14px;
+.section-4:hover {
+    transform: rotateZ(0deg);
 }
 
-.social-icons a {
-  display: inline-block;
-  width: 36px;
-  height: 36px;
-  text-align: center;
-  background: #262626;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 50%;
-  transition: 0.5s;
+.main-grid a {
+    text-decoration: none;
+    margin: 0.2rem;
+    color: var(--mist-black);
 }
 
-.social-icons a .fa {
-  line-height: 36px;
+.section-1::before {
+    content: "Y";
+    font-size: 20rem;
 }
 
-.social-icons a:hover {
-  background-color: rgb(0, 181, 187);
+.section-1:hover::before {
+    content: "";
 }
 
-/*.card .back .details .resume {
-  position: absolute;
-  transform: translate(-50%);
-  width: 60%;
-  height: 50px;
-  text-align: center;
-  text-decoration: none;
-  line-height: 50px;
-  color: #fff;
-  font-size: 24px;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
-  border-radius: 30px;
+.section-1:hover::after {
+    content: "Twitter";
+    font-size: 5rem;
 }
 
-.card .back .details .resa:hover {
-  animation: animate 8s linear infinite;
-  filter: blur(25px);
+.section-2::before {
+    content: "A";
+    font-size: 20rem;
 }
 
-@keyframes amimate {
-  0% {
-    background-position: 0%;
-  }
-  100% {
-    background-position: 400%;
-  }
+.section-2:hover::before {
+    content: "";
 }
-*/
 
-.example_f {
-  border-radius: 30px;
-  background: linear-gradient(to right, #67b26b, #4ca2cb) !important;
+.section-2:hover::after {
+    content: "LinkedIn";
+    font-size: 5rem;
+}
 
-  color: #FFFFFF;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 20px;
-  padding: 10px;
-  width: 200px;
-  transition: all 0.4s;
-  cursor: pointer;
-  box-sizing: border-box;
-  margin: 5px;
+.section-3::before {
+    content: "S";
+    font-size: 20rem;
 }
-.example_f span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.4s;
+
+.section-3:hover::before {
+    content: "";
 }
-.example_f span:after {
-  content: '\2193';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+
+.section-3:hover::after {
+    content: "Medium";
+    font-size: 5rem;
 }
-.example_f:hover span {
-  padding-right: 25px;
+
+.section-4::before {
+    content: "H";
+    font-size: 20rem;
 }
-.example_f:hover span:after {
-  opacity: 1;
-  right: 0;
+
+.section-4:hover::before {
+    content: "";
+}
+
+.section-4:hover::after {
+    content: "GitHub";
+    font-size: 5rem;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    font-family: var(--info-font);
+}
+
+.contact {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-family: var(--info-font);
+    transform: rotateZ(-90deg) translateX(-2.2rem) translateY(2rem);
+}
+
+.contact a {
+    text-decoration: none;
+    color: var(--mist-black);
+}
+
+.social-cta {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    font-family: var(--info-font);
+    transform: rotateZ(90deg) translateX(-7rem) translateY(7rem);
+}
+
+.footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}
+
+.footer a {
+    width: 10rem;
+    height: 1rem;
+    text-decoration: none;
+    color: var(--mist-black);
+    font-family: var(--info-font);
+}
+
+.footer a::before {
+    content: 'Software Engineer';
+    text-decoration: none;
+    color: var(--mist-black);
+    transition: content 0.2s ease-in-out;
+}
+
+.footer a:hover::before {
+    content: '';
+}
+
+.footer a:hover::after {
+    content: 'RESUME';
 }
