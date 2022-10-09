@@ -17,9 +17,11 @@ const Header = () => {
 		<header className={styles.HeaderContainer}>
 			<div className={styles.Container}>
 				<div className={styles.LogoContainer}>
-					<h1>
-						Yash<span>.</span>
-					</h1>
+					<Link href="/">
+						<h1>
+							Yash<span>.</span>
+						</h1>
+					</Link>
 				</div>
 				<div className={styles.Links}>
 					<Link href="/resume">Resume</Link>

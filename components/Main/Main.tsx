@@ -1,11 +1,20 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
+import { useCallback } from "react"
 
 import Arrow from "../../assets/arrow.png"
 import Button from "../Button/Button"
 import styles from "./Main.module.scss"
 
 const Main = () => {
+	const router = useRouter()
+
+	const goToLinkedIn = useCallback(
+		() => router.replace("https://linkedin.com/in/yashgarudkar"),
+		[router]
+	)
+
 	return (
 		<main className={`${styles.Main} ${styles.Container}`}>
 			<div className={styles.Content}>
@@ -16,12 +25,13 @@ const Main = () => {
 				</h1>
 				<p>
 					<span>Building beautiful and robust</span>
-					<br /> React-Node applications for than 2.5 years.
+					<br /> <span className={styles.Tech}>React-Node</span> applications
+					for more than 2.5 years.
 				</p>
-				<Button>Hire Me</Button>
+				<Button onClick={goToLinkedIn}>Hire Me</Button>
 				<span className={styles.ProjectsLink}>
 					<Link href="/resume">
-						<>
+						<div className={styles.ProjectsButton}>
 							<p>Projects</p>
 							<div className={styles.ArrowIcon}>
 								<Image
@@ -31,12 +41,12 @@ const Main = () => {
 									alt="arrow icon"
 								/>
 							</div>
-						</>
+						</div>
 					</Link>
 				</span>
 				<div className={styles.Contact}>
 					<h2>
-						Contact: <br/>
+						Contact: <br />
 						<a href="mailto:yashgarudkar@gmail.com">garudkary@gmail.com</a>
 					</h2>
 				</div>
