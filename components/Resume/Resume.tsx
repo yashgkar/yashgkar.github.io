@@ -98,7 +98,7 @@ const Resume = () => {
 					]}
 				/>
 			</div>
-			<button className={styles.CTA}>Download Resume</button>
+			{/* <button className={styles.CTA}>Download Resume</button> */}
 		</div>
 	)
 }
