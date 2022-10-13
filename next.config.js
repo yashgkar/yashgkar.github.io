@@ -5,9 +5,6 @@ const nextConfig = {
   images: {
     domains: ['i.postimg.cc']
   },
-  env: {
-    gtag: process.env.GTAG
-  }
 }
 
 module.exports = nextConfig
