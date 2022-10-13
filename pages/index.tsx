@@ -2,7 +2,6 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import Header from "../components/Header/Header"
 import Main from "../components/Main/Main"
-import MobileNav from "../components/MobileNav/MobileNav"
 
 const Home: NextPage = () => {
 	return (
@@ -14,7 +13,6 @@ const Home: NextPage = () => {
 			</Head>
 			<Header />
       <Main />
-			<MobileNav />
 		</div>
 	)
 }

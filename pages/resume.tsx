@@ -1,7 +1,6 @@
 import type { NextPage } from "next"
 import Head from "next/head"
 import Header from "../components/Header/Header"
-import MobileNav from "../components/MobileNav/MobileNav"
 import Resume from "../components/Resume/Resume"
 
 const ResumePage: NextPage = () => {
@@ -14,7 +13,6 @@ const ResumePage: NextPage = () => {
 			</Head>
 			<Header />
 			<Resume />
-			<MobileNav />
 		</div>
 	)
 }

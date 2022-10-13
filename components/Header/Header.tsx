@@ -8,8 +8,8 @@ import styles from "./Header.module.scss"
 const Header = () => {
 	const router = useRouter()
 
-	const goToLinkedIn = useCallback(
-		() => router.replace("https://linkedin.com/in/yashgarudkar"),
+	const goToResume = useCallback(
+		() => router.push("/resume"),
 		[router]
 	)
 
@@ -23,13 +23,8 @@ const Header = () => {
 						</h1>
 					</Link>
 				</div>
-				<div className={styles.Links}>
-					<Link href="/resume">Resume</Link>
-					<Link href="/about">About</Link>
-					<Link href="/services">Services</Link>
-				</div>
 				<div className={styles.CTA}>
-					<Button onClick={goToLinkedIn}>Let&apos;s Chat</Button>
+					<Button onClick={goToResume}>Resume</Button>
 				</div>
 			</div>
 		</header>
