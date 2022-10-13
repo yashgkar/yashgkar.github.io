@@ -4,6 +4,9 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['i.postimg.cc']
+  },
+  env: {
+    gtag: process.env.GTAG
   }
 }
 
