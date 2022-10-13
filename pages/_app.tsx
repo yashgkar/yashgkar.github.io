@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 				async
 				src={`https://www.googletagmanager.com/gtag/js?id=G-0VXKZBHJB8`}
 			/>
-			<Script id="google-analytics" strategy="afterInteractive">
+			<Script id="google-analytics" strategy="afterInteractive" crossOrigin="use-credentials">
 				{`window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
