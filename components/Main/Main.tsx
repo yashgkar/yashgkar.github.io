@@ -47,7 +47,7 @@ const Main = () => {
 				<div className={styles.Contact}>
 					<h2>
 						Contact: <br />
-						<a href="mailto:yashgarudkar@gmail.com">garudkary@gmail.com</a>
+						<a href="mailto:garudkary@gmail.com">garudkary@gmail.com</a>
 					</h2>
 				</div>
 			</div>
