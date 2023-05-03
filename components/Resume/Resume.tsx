@@ -11,9 +11,21 @@ const Resume = () => {
 		return [
 			{
 				id: nanoid(),
+				companyName: "Toddle",
+				from: "Dec 2022",
+				to: "Current",
+				designation: "Software Engineer",
+				tasksHandled: [
+					"Worked on React app in JavaScript",
+					"GraphQL API for backend services",
+					"Apollo Client and Server for GraphQL consumption"
+				]
+			},
+			{
+				id: nanoid(),
 				companyName: "Perennial Systems",
 				from: "April 2022",
-				to: "Current",
+				to: "Nov 2022",
 				designation: "Senior Associate Engineer",
 				tasksHandled: [
 					"Worked on a PWA made with Nextjs for inspiring women towards investment and learn mutual funds.",

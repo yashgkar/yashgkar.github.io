@@ -14,7 +14,8 @@
 			width: 30px;
 			height: 30px;
 			background: rgb(0, 212, 184);
-			left: -0.6rem;
+			left: -16px;
+			top: -10px;
 			border-radius: 20px;
 		}
 	}
@@ -27,6 +28,7 @@
 	}
 
 	@media (max-width: 1080px) {
-		padding: 0 2rem;		
+		padding: 0 2rem;
 	}
 }
+
